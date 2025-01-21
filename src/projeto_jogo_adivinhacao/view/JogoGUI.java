@@ -39,8 +39,15 @@ public class JogoGUI {
         titleLabel.setFont(new Font("Arial", Font.BOLD, 20));
         frame.add(titleLabel, BorderLayout.NORTH);
 
+        // Instrução para o jogador
+        JLabel instructionLabel = new JLabel("Digite um número de 1 a 100:");
+        instructionLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        instructionLabel.setFont(new Font("Arial", Font.PLAIN, 16));
+        instructionLabel.setForeground(Color.BLACK);
+        frame.add(instructionLabel, BorderLayout.SOUTH);
+
         // Painel de Feedback e Status
-        feedbackLabel = new JLabel("Faça seu primeiro palpite!");
+        feedbackLabel = new JLabel("Faça seu palpite com números de 1 a 100!");
         feedbackLabel.setHorizontalAlignment(SwingConstants.CENTER);
         feedbackLabel.setFont(new Font("Arial", Font.PLAIN, 16));
         feedbackLabel.setForeground(Color.BLUE);
@@ -108,7 +115,7 @@ public class JogoGUI {
 
     private void reiniciarJogo() {
         controller.reiniciarJogo();
-        feedbackLabel.setText("Novo jogo iniciado! Faça seu primeiro palpite.");
+        feedbackLabel.setText("Novo jogo ! Faça palpite com números de 1 a 100!");
         feedbackLabel.setForeground(Color.BLUE);
 
         tentativasLabel.setText("Tentativas restantes: " + controller.getTentativasRestantes());
